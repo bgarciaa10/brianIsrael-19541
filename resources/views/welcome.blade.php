@@ -10,7 +10,7 @@
             </div>
         @endif
 
-        <form class="shadow-lg" action="" method="post" action="">
+        <form class="shadow-lg" action="{{route('correo.store')}}" method="post" >
 
             <!-- CROSS Site Request Forgery Protection -->
             @csrf
