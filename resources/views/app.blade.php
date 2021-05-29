@@ -135,9 +135,9 @@
                         </a>
                         <div id="list-example" class="list-group">
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="#list-item-1">Computadoras</a>
-                                <a class="dropdown-item" href="#list-item-2">Monitor</a>
-                                <a class="dropdown-item" href="#list-item-3">Teclados y Mouse</a>
+                                <a class="dropdown-item" href="#list-item-1"></a>
+                                <a class="dropdown-item" href="#list-item-2"></a>
+                                <a class="dropdown-item" href="#list-item-3"></a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#list-item-4"></a>
                             </div>
