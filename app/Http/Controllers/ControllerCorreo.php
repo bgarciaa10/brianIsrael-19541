@@ -18,7 +18,7 @@ class ControllerCorreo extends Controller
         //predeterminado
         $data = $request->validated();
         $varCorreo = ModelCorreo::create($data);
-        return redirect()->route('home')->with('status', 'Correo Registrado');
+        return redirect()->route('welcome')->with('status', 'Correo Registrado');
 
     }
 }

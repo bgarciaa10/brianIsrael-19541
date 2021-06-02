@@ -68,7 +68,12 @@
             <div class="centrar">
                 <input type="submit" name="send" value="Guardar" class="btn btn-success mr-auto">
             </div>
-
         </form>
+        @if($status->has('Correo Registrado'))
+            <script>
+                Swal.fire('Any fool can use a computer')
+            </script>
+            @endif
+
     </div>
 @endsection
