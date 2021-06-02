@@ -17,5 +17,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('correo', 'ControllerCorreo');
+Route::resource('welcome', 'App\Http\Controllers\WelcomeController');
+
+Route::resource('correo', 'App\Http\Controllers\ControllerCorreo');
 
