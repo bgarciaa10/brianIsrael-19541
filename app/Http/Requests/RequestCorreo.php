@@ -28,7 +28,7 @@ class RequestCorreo extends FormRequest
                 'required',
             ],
             'email' => [
-                'required|email',
+                'required',
             ],
             'phone' => [
                 'required', 'min:8'

@@ -68,7 +68,8 @@
             <div class="centrar">
                 <input type="submit" name="send" value="Guardar" class="btn btn-success mr-auto">
             </div>
-
         </form>
+
+
     </div>
 @endsection
