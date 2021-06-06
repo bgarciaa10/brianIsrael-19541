@@ -73,3 +73,18 @@
 
     </div>
 @endsection
+
+
+@section("yieldJS")
+
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+script
+
+if(session("status" = "Correo Registrado")
+cuerpo
+
+
+/script
+
+@endsection
