@@ -1,8 +1,8 @@
 @extends('app')
 
 @section('content')
-    <div class="container" id="form">
 
+    <div class="container" id="form">
         <!-- Success message -->
         @if(Session::has('success'))
             <div class="alert alert-success">
@@ -10,21 +10,51 @@
             </div>
         @endif
 
-        <form class="shadow-lg" action="{{route('correo.store')}}" method="post" >
+        <!-- Validacion para mostrar SweetAlert -->
+        @if(session('status') == 'ok')
 
+            <script>
+                Swal.fire({
+                    position: 'center',
+                    icon: 'error',
+                    title: 'Error en el Registro',
+                    timer: 2500,
+                })
+            </script>
+
+        @endif
+
+        @if(session('status') == 'error')
+            <script>
+                Swal.fire({
+                    position: 'center',
+                    icon: 'error',
+                    title: 'Error en el Registro',
+                    timer: 2500,
+                })
+            </script>
+        @endif
+
+
+        <form class="shadow-lg" action="{{route('correo.store')}}" method="post" >
             <!-- CROSS Site Request Forgery Protection -->
             @csrf
 
+    <!-- Campo Nombre -->
             <div class="form-group">
                 <label for="name">Nombre</label>
                 <input class="form-control col-md-auto"  type="text"  name="name" id="name" value="{{old('name')}}" maxlength="50"
                        required="required">
 
                 @if($errors->has('name'))
+                    <script>
+                        toastr.success({{$errors->first('name')}})
+                    </script>
                     <p class="text-danger">{{$errors->first('name')}}</p>
                 @endif
             </div>
 
+    <!-- Campo Correo Electronico -->
             <div class="form-group">
                 <label for="email">Correo Electronico</label>
                 <input class="form-control col-md-auto"  type="email"  name="email" id="name" value="{{old('email')}}" maxlength="50"
@@ -35,6 +65,7 @@
                 @endif
             </div>
 
+    <!-- Campo Teléfono -->
             <div class="form-group">
                 <label for="phone">Teléfono</label>
                 <input class="form-control col-md-auto"  type="tel"  name="phone" id="phone" value="{{old('name')}}" maxlength="8"
@@ -45,6 +76,7 @@
                 @endif
             </div>
 
+    <!-- Campo Asunto -->
             <div class="form-group">
                 <label for="subject">Asunto</label>
                 <input class="form-control col-md-auto"  type="text"  name="subject" id="subject" value="{{old('subject')}}" maxlength="125"
@@ -55,6 +87,7 @@
                 @endif
             </div>
 
+    <!-- Campo Mensaje -->
             <div class="form-group">
                 <label for="message">Mensaje</label>
                 <input class="form-control col-md-auto"  type="text"  name="message" id="message" value="{{old('message')}}" maxlength="125"
@@ -65,9 +98,11 @@
                 @endif
             </div>
 
+    <!-- Boton Guardar -->
             <div class="centrar">
-                <input type="submit" name="send" value="Guardar" class="btn btn-success mr-auto">
+                <input type="submit" onclick="mensaje()" name="send" value="Guardar" class="btn btn-success mr-auto">
             </div>
+
         </form>
 
 
